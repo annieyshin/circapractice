@@ -6,6 +6,10 @@ const NavBar = () => {
     <div>
       <Menu>
         <Menu.Item>
+          <img src='https://via.placeholder.com/200' alt='logo'/>
+        </Menu.Item>
+
+        <Menu.Item>
           Projects
         </Menu.Item>
 
