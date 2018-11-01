@@ -2,18 +2,22 @@ import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
 
 class NavBar extends Component {
-  state = {}
+  state = {};
 
-  handleItemClick = (e, { name }) => this.setState({ activeLink: name })
+  handleItemClick = (e, { name }) => this.setState({ activeLink: name });
 
   render() {
     const { activeLink } = this.state;
-    
+
     return (
       <div>
         <Menu>
           <Menu.Item>
-            <img src="https://via.placeholder.com/200" alt="logo" />
+            <img
+              src="./logo.png"
+              alt="logo"
+              style={{ height: "100px", width: "100%" }}
+            />
           </Menu.Item>
 
           <Menu.Item
