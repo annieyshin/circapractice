@@ -1,19 +1,18 @@
-import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import React from "react";
+import { Container, Button, Header, Icon } from "semantic-ui-react";
+import ExpensesList from "./ExpensesList";
 
 const ExpensesMain = () => {
   return (
-    <Grid columns={2} divided>
-      <Grid.Row>
-        <Grid.Column>
-          <h1>Add Expenses</h1>
-        </Grid.Column>
-        <Grid.Column>
-          <h1>Current Expenses</h1>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  )
-}
+    <Container>
+      <Header size="huge" icon="clock">
+        <Icon name="money bill alternate outline" />
+        <Header.Content>Expenses</Header.Content>
+      </Header>
+      <ExpensesList />
+      <Button content="Add Expense" />
+    </Container>
+  );
+};
 
-export default ExpensesMain
+export default ExpensesMain;
