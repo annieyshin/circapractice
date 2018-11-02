@@ -1,18 +1,23 @@
 import React from "react";
-import { Container, Button, Header, Icon } from "semantic-ui-react";
+import { Grid, Button, Header, Icon } from "semantic-ui-react";
 import ExpensesList from "./ExpensesList";
 
 const ExpensesMain = () => {
   return (
-    <Container>
-      <Header size="huge">
-        <Icon name="money bill alternate outline" />
-        <Header.Content>Expenses</Header.Content>
-      </Header>
-      <ExpensesList />
-      <br/>
-      <Button content="Add Expense" icon="add" primary/>
-    </Container>
+    <Grid columns={2}>
+      <Grid.Column width={10}>
+        <Header size="huge">
+          <Icon name="money bill alternate outline" />
+          <Header.Content>Expenses</Header.Content>
+        </Header>
+        <ExpensesList />
+        <br />
+        <Button content="Add Expense" icon="add" primary />
+      </Grid.Column>
+      <Grid.Column width={6}>
+        add new expense form to display on click of add expense button
+      </Grid.Column>
+    </Grid>
   );
 };
 
