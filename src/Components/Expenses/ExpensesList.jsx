@@ -1,13 +1,12 @@
 import React from 'react';
 import ExpensesListItem from './ExpensesListItem';
+import { Segment } from 'semantic-ui-react';
 
 const ExpensesList = () => {
   return (
-    <div>
+    <Segment.Group vertical compact>
       <ExpensesListItem />
-      <ExpensesListItem />
-      <ExpensesListItem />
-    </div>
+    </Segment.Group>
   )
 }
 
