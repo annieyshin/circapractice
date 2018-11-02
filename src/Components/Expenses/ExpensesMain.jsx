@@ -10,7 +10,7 @@ const ExpensesMain = () => {
         <Header.Content>Expenses</Header.Content>
       </Header>
       <ExpensesList />
-      <Button content="Add Expense" />
+      <Button content="Add Expense" icon="add" primary/>
     </Container>
   );
 };
