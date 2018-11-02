@@ -6,7 +6,7 @@ import { mockExpenses } from "../../Data/mockExpenses";
 class ExpensesList extends Component {
   render() {
     return (
-      <Table columns={3} collapsing>
+      <Table columns={3}>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Title</Table.HeaderCell>
