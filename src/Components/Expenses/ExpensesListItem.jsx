@@ -1,10 +1,11 @@
 import React from "react";
+import { Segment } from 'semantic-ui-react'
 
 const ExpensesListItem = () => {
   return (
-    <div>
+    <Segment vertical compact>
       <p>Example Expense</p>
-    </div>
+    </Segment>
   );
 };
 
