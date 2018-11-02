@@ -11,7 +11,6 @@ const ExpensesMain = () => {
           <Header.Content>Expenses</Header.Content>
         </Header>
         <ExpensesList />
-        <br />
         <Button content="Add Expense" icon="add" primary />
       </Grid.Column>
       <Grid.Column width={6}>
