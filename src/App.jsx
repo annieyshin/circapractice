@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/NavBar";
 import ReportsMain from "./Components/ReportsMain";
-import ExpensesMain from "./Components/ExpensesMain";
+import ExpensesMain from './Components/Expenses/ExpensesMain'
 import ProjectsMain from "./Components/ProjectsMain";
 
 class App extends Component {
