@@ -5,7 +5,7 @@ import HomePage from "./Components/HomePage";
 import NavBar from "./Components/NavBar";
 import ReportsMain from "./Components/ReportsMain";
 import ExpensesMain from './Components/Expenses/ExpensesMain'
-import ProjectsMain from "./Components/ProjectsMain";
+import ProjectsMain from "./Components/Projects/ProjectsMain";
 
 class App extends Component {
   render() {
