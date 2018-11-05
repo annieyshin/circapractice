@@ -1,18 +1,43 @@
 import React from "react";
-import { Icon, Table } from "semantic-ui-react";
+import { Icon, Table, Button, Popup } from "semantic-ui-react";
 
-const listIcons = {
-  marginLeft: "1em"
+const iconButtons = {
+  boxShadow: "none",
+  marginRight: "0.5em"
 };
 
-const ExpensesListItem = ({title, cost}) => {
+const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
   return (
     <Table.Row>
       <Table.Cell>{title}</Table.Cell>
       <Table.Cell>${cost}</Table.Cell>
       <Table.Cell>
-        <Icon name="edit" color="grey" style={listIcons} />
-        <Icon name="delete" color="red" style={listIcons} />
+        <Popup
+          trigger={
+            <Button icon basic style={iconButtons}>
+              <Icon name="edit" />
+            </Button>
+          }
+          content="Edit Expense"
+        />
+
+        <Popup
+          basic
+          trigger={
+            <Button icon basic style={iconButtons}>
+              <Icon name="delete" color="red" />
+            </Button>
+          }
+          content={
+            <Button
+              color="red"
+              content="Confirm"
+              onClick={() => handleDelete(id)}
+            />
+          }
+          on="click"
+          position="right center"
+        />
       </Table.Cell>
     </Table.Row>
   );
