@@ -15,6 +15,9 @@ const ExpensesMain = () => {
       <Header size="huge">
         <Icon name="money bill alternate outline" />
         <Header.Content>Expenses</Header.Content>
+        <Header.Subheader>
+          View, add, edit, or delete monthly expenses here.
+        </Header.Subheader>
       </Header>
       <ExpensesList />
       <Button
