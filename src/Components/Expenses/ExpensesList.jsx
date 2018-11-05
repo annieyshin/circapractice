@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpensesListItem from "./ExpensesListItem";
 import { Table } from "semantic-ui-react";
 import { mockExpenses } from "../../Data/mockExpenses";
 
 const ExpensesList = () => {
+  const [expenses, setExpenses] = useState(mockExpenses);
+
+  const handleDelete = expenseId => {
+    const newExpenses = expenses.filter(e => e.id !== expenseId);
+    setExpenses(newExpenses);
+  };
+
   return (
     <Table columns={3}>
       <Table.Header>
@@ -14,13 +21,16 @@ const ExpensesList = () => {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {mockExpenses.map(expense => (
-          <ExpensesListItem
-            key={expense.id}
-            title={expense.title}
-            cost={expense.cost}
-          />
-        ))}
+        {expenses &&
+          expenses.map(expense => (
+            <ExpensesListItem
+              key={expense.id}
+              id={expense.id}
+              title={expense.title}
+              cost={expense.cost}
+              handleDelete={handleDelete}
+            />
+          ))}
       </Table.Body>
       <Table.Footer>
         <Table.Row>
