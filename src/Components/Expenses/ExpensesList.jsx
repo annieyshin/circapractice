@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import ExpensesListItem from "./ExpensesListItem";
-import { Table } from "semantic-ui-react";
-import { mockExpenses } from "../../Data/mockExpenses";
+import React, { useState } from 'react';
+import ExpensesListItem from './ExpensesListItem';
+import { Table } from 'semantic-ui-react';
+import { mockExpenses } from '../../Data/mockExpenses';
 
 const ExpensesList = () => {
   const [expenses, setExpenses] = useState(mockExpenses);

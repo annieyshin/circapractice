@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Button, Header, Icon } from "semantic-ui-react";
-import ExpensesList from "./ExpensesList";
-import ExpensesForm from "./ExpensesForm";
+import React, { useState } from 'react';
+import { Button, Header, Icon } from 'semantic-ui-react';
+import ExpensesList from './ExpensesList';
+import ExpensesForm from './ExpensesForm';
 
 const ExpensesMain = () => {
   const [showForm, setShowForm] = useState(false);
 
   const handleCancel = () => {
     setShowForm(false);
-  }
+  };
 
   return (
     <div>
@@ -22,7 +22,7 @@ const ExpensesMain = () => {
         content="Add Expense"
         icon="add"
         primary
-        style={{ marginBottom: "2em" }}
+        style={{ marginBottom: '2em' }}
       />
       {showForm && <ExpensesForm handleCancel={handleCancel} />}
     </div>

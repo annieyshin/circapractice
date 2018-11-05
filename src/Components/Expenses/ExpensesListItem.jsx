@@ -1,9 +1,9 @@
-import React from "react";
-import { Icon, Table, Button, Popup } from "semantic-ui-react";
+import React from 'react';
+import { Icon, Table, Button, Popup } from 'semantic-ui-react';
 
 const iconButtons = {
-  boxShadow: "none",
-  marginRight: "0.5em"
+  boxShadow: 'none',
+  marginRight: '0.5em'
 };
 
 const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
