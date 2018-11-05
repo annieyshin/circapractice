@@ -4,7 +4,12 @@ import ExpensesList from "./ExpensesList";
 import ExpensesForm from "./ExpensesForm";
 
 const ExpensesMain = () => {
-  const [showForm, toggleForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+  const handleCancel = () => {
+    setShowForm(false);
+  }
+
   return (
     <div>
       <Header size="huge">
@@ -13,13 +18,13 @@ const ExpensesMain = () => {
       </Header>
       <ExpensesList />
       <Button
-        onClick={() => toggleForm(showForm ? false : true)}
+        onClick={() => setShowForm(true)}
         content="Add Expense"
         icon="add"
         primary
         style={{ marginBottom: "2em" }}
       />
-      {showForm && <ExpensesForm />}
+      {showForm && <ExpensesForm handleCancel={handleCancel} />}
     </div>
   );
 };
