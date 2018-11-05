@@ -15,7 +15,7 @@ const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
         <Popup
           trigger={
             <Button icon basic style={iconButtons}>
-              <Icon name="edit" />
+              <Icon name="edit" size="large" />
             </Button>
           }
           content="Edit Expense"
@@ -25,13 +25,13 @@ const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
           basic
           trigger={
             <Button icon basic style={iconButtons}>
-              <Icon name="delete" color="red" />
+              <Icon name="delete" color="red" size="large" />
             </Button>
           }
           content={
             <Button
               color="red"
-              content="Confirm"
+              content="Confirm Delete"
               onClick={() => handleDelete(id)}
             />
           }
