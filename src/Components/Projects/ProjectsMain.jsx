@@ -6,9 +6,9 @@ const ProjectsMain = () => {
   return (
     <div>
       <Header size="huge">
-        <Icon name="book" />
+        <Icon name="desktop" />
         <Header.Content>Projects</Header.Content>
-        <Header.Subheader>
+        <Header.Subheader style={{ marginTop: '0.5em' }}>
           Browse projects and change their billing type.
         </Header.Subheader>
       </Header>
