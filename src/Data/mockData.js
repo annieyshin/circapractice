@@ -29,7 +29,7 @@ export const mockProjects = [
     at: '2013-03-06T12:15:37+00:00',
     template: true,
     color: '5',
-    billingType: 'hourly'
+    budgetType: 'Hourly'
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const mockProjects = [
     at: '2013-03-06T12:15:37+00:00',
     template: true,
     color: '5',
-    billingType: 'hourly'
+    budgetType: 'Hourly'
   },
   {
     id: 3,
@@ -55,6 +55,6 @@ export const mockProjects = [
     at: '2013-03-06T12:15:37+00:00',
     template: true,
     color: '5',
-    billingType: 'hourly'
+    budgetType: 'Hourly'
   }
 ];
