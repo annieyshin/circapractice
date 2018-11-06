@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
-import { NavLink, withRouter, Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Menu } from 'semantic-ui-react';
+import { NavLink, withRouter, Link } from 'react-router-dom';
 
 class NavBar extends Component {
   render() {
@@ -11,7 +11,7 @@ class NavBar extends Component {
             <img
               src="./logo.png"
               alt="logo"
-              style={{ height: "100px", width: "100%" }}
+              style={{ height: '100px', width: '100%' }}
             />
           </Menu.Item>
           <Menu.Item as={NavLink} to="/reports" name="Reports" />

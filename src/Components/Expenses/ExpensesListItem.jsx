@@ -1,24 +1,47 @@
-import React, { Component } from "react";
-import { Icon, Table } from "semantic-ui-react";
+import React from 'react';
+import { Icon, Table, Button, Popup } from 'semantic-ui-react';
 
-const listIcons = {
-  marginLeft: "1em",
+const iconButtons = {
+  boxShadow: 'none',
+  margin: '0 1em 0em 0',
+  padding: "0 0 0.2em 0"
 };
 
-export class ExpensesListItem extends Component {
-  render() {
-    const { title, cost } = this.props;
-    return (
-      <Table.Row>
-        <Table.Cell>{title}</Table.Cell>
-        <Table.Cell>${cost}</Table.Cell>
-        <Table.Cell>
-          <Icon name="edit" color="grey" style={listIcons} />
-          <Icon name="delete" color="red" style={listIcons} />
-        </Table.Cell>
-      </Table.Row>
-    );
-  }
-}
+const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
+  return (
+    <Table.Row>
+      <Table.Cell>{title}</Table.Cell>
+      <Table.Cell>${cost}</Table.Cell>
+      <Table.Cell>
+        <Popup
+          trigger={
+            <Button icon basic style={iconButtons}>
+              <Icon name="edit" size="large" />
+            </Button>
+          }
+          content="Edit Expense"
+        />
+
+        <Popup
+          basic
+          trigger={
+            <Button icon basic style={iconButtons}>
+              <Icon name="delete" color="red" size="large" />
+            </Button>
+          }
+          content={
+            <Button
+              color="red"
+              content="Confirm Delete"
+              onClick={() => handleDelete(id)}
+            />
+          }
+          on="click"
+          position="right center"
+        />
+      </Table.Cell>
+    </Table.Row>
+  );
+};
 
 export default ExpensesListItem;

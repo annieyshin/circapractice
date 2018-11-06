@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const ReportsMain = () => {
   return (
     <div>
-      <h1>Reports Main Component</h1>
+      <h1>Reports Main</h1>
     </div>
-  )
-}
+  );
+};
 
-export default ReportsMain
+export default ReportsMain;
