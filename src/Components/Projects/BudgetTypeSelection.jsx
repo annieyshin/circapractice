@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Form } from 'semantic-ui-react';
 
 const formStyle = {
-  minWidth: "0",
-  maxWidth: "75%"
-}
+  minWidth: '0',
+  maxWidth: '75%'
+};
 
 const options = [
   { key: 'hourly', value: 'Hourly', text: 'Hourly' },
