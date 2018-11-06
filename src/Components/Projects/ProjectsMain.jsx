@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Icon } from 'semantic-ui-react';
+import { Header, Icon, Button } from 'semantic-ui-react';
 import ProjectsList from './ProjectsList';
 
 const ProjectsMain = () => {
@@ -13,6 +13,7 @@ const ProjectsMain = () => {
         </Header.Subheader>
       </Header>
       <ProjectsList />
+      <Button content="Save Changes" icon="save" positive  />
     </div>
   );
 };
