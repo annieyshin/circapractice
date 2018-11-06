@@ -7,7 +7,7 @@ const ExpensesForm = ({ handleCancel }) => {
       <Form.Group>
         <Form.Input placeholder="New Expense" type="text" width={4} />
         <Form.Input placeholder="Cost" type="number" width={4} />
-        <Form.Button content="Submit" primary disabled />
+        <Form.Button content="Submit" positive disabled />
         <Form.Button onClick={handleCancel} content="Cancel" />
       </Form.Group>
     </Form>
