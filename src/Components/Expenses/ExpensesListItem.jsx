@@ -3,7 +3,8 @@ import { Icon, Table, Button, Popup } from 'semantic-ui-react';
 
 const iconButtons = {
   boxShadow: 'none',
-  marginRight: '0.5em'
+  margin: '0 1em 0em 0',
+  padding: "0 0 0.2em 0"
 };
 
 const ExpensesListItem = ({ id, title, cost, handleDelete }) => {
