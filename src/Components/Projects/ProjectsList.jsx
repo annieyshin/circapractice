@@ -7,13 +7,13 @@ const ProjectsList = () => {
   const [projects] = useState(mockProjects);
 
   return (
-    <Table columns={4}>
+    <Table columns={4} color='teal'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Name</Table.HeaderCell>
           <Table.HeaderCell>Billable</Table.HeaderCell>
-          <Table.HeaderCell>Budget Type</Table.HeaderCell>
           <Table.HeaderCell>Client</Table.HeaderCell>
+          <Table.HeaderCell>Billing Cycle</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
