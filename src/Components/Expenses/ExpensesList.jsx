@@ -12,7 +12,7 @@ const ExpensesList = () => {
   };
 
   return (
-    <Table columns={3}>
+    <Table columns={3} color='red'>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Title</Table.HeaderCell>
