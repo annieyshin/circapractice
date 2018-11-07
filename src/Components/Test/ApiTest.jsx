@@ -7,6 +7,7 @@ const ApiTest = () => {
 
   return (
     <div>
+      <h1>Our call returned:</h1>
       <Header>{workspace.name}</Header>
       <Header>ID: {workspace.id}</Header>
     </div>
