@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar";
 import ReportsMain from "./Components//Reports/ReportsMain";
 import ExpensesMain from './Components/Expenses/ExpensesMain'
 import ProjectsMain from "./Components/Projects/ProjectsMain";
+import ApiTest from "./Components/Test/ApiTest";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
                   <Route path="/reports" component={ReportsMain} />
                   <Route path="/expenses" component={ExpensesMain} />
                   <Route path="/projects" component={ProjectsMain} />
+                  <Route path="/test" component={ApiTest} />
                 </Switch>
               </Container>
             </div>
