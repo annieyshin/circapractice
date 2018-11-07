@@ -2,16 +2,14 @@ import React from 'react';
 import ExpensesListItem from './ExpensesListItem';
 import { Table } from 'semantic-ui-react';
 
-const ExpensesList = ({expenses, handleDelete}) => {
-  
+const ExpensesList = ({ expenses, handleDelete }) => {
   const getTotal = () => {
     let total = 0;
     expenses.forEach(expense => {
-      total += parseInt(expense.cost)
-    })
+      total += parseInt(expense.cost);
+    });
     return total;
-  }
-
+  };
 
   return (
     <Table columns={3} color="red">
