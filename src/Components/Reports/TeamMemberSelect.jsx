@@ -19,9 +19,19 @@ const TeamMemberSelect = ({ mockTeamMembers }) => {
 
   const options = getOptions(mockTeamMembers);
 
+  const handleChange = (e, selection) => {
+    //selection.value is the ID of the selected item
+    console.log(selection.value);
+  };
+
   return (
     <Menu.Item>
-      <Select selection options={options} placeholder="Select Team Member" />
+      <Select
+        onChange={handleChange}
+        selection
+        options={options}
+        placeholder="Select Team Member"
+      />
     </Menu.Item>
   );
 };
