@@ -4,6 +4,15 @@ import { Table } from 'semantic-ui-react';
 
 const ExpensesList = ({expenses, handleDelete}) => {
   
+  const getTotal = () => {
+    let total = 0;
+    expenses.forEach(expense => {
+      total += parseInt(expense.cost)
+    })
+    return total;
+  }
+
+
   return (
     <Table columns={3} color="red">
       <Table.Header>
@@ -28,7 +37,7 @@ const ExpensesList = ({expenses, handleDelete}) => {
       <Table.Footer>
         <Table.Row>
           <Table.HeaderCell />
-          <Table.HeaderCell>Total: $500</Table.HeaderCell>
+          <Table.HeaderCell>Total: ${getTotal()}</Table.HeaderCell>
           <Table.HeaderCell />
         </Table.Row>
       </Table.Footer>
