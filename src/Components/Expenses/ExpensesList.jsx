@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExpensesListItem from './ExpensesListItem';
 import { Table } from 'semantic-ui-react';
-import { mockExpenses } from '../../Data/mockData';
 
-const ExpensesList = () => {
-  const [expenses, setExpenses] = useState(mockExpenses);
-
-  const handleDelete = expenseId => {
-    const newExpenses = expenses.filter(e => e.id !== expenseId);
-    setExpenses(newExpenses);
-  };
-
+const ExpensesList = ({expenses, handleDelete}) => {
+  
   return (
     <Table columns={3} color="red">
       <Table.Header>
