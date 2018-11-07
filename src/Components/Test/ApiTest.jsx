@@ -3,8 +3,22 @@ import { init } from './token';
 import { Header } from 'semantic-ui-react';
 
 const ApiTest = () => {
-  const getWorkspacesUrl = `https://www.toggl.com/api/v8/workspaces`;
+  const workspace = useWorkspace();
 
+  return (
+    <div>
+      <Header>{workspace.id}</Header>
+      <Header>ID: {workspace.name}</Header>
+    </div>
+  );
+};
+
+export default ApiTest;
+
+
+//Custom Hook reusable in other components
+const useWorkspace = () => {
+  const getWorkspacesUrl = `https://www.toggl.com/api/v8/workspaces`;
   const [workspaceId, setWorkspaceId] = useState(null);
   const [workspaceName, setWorkspaceName] = useState(null);
 
@@ -18,12 +32,8 @@ const ApiTest = () => {
       });
   }, []);
 
-  return (
-    <div>
-      <Header>{workspaceName}</Header>
-      <Header>ID: {workspaceId}</Header>
-    </div>
-  );
-};
-
-export default ApiTest;
+  return {
+    id: workspaceId,
+    name: workspaceName
+  }
+}
