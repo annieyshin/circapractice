@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-import BudgetTypeSelection from './BudgetTypeSelection';
+import BillingTypeSelect from './BillingTypeSelect';
 
 const ProjectListItem = ({ project }) => {
   const { name, billable, budgetType, cid } = project;
@@ -9,7 +9,7 @@ const ProjectListItem = ({ project }) => {
       <Table.Cell>{name}</Table.Cell>
       <Table.Cell>{billable ? 'Yes' : 'No'}</Table.Cell>
       <Table.Cell>{`Angel's Envy ${cid}`}</Table.Cell>
-      <Table.Cell><BudgetTypeSelection budgetType={budgetType} /></Table.Cell>
+      <Table.Cell><BillingTypeSelect budgetType={budgetType} /></Table.Cell>
     </Table.Row>
   );
 };
