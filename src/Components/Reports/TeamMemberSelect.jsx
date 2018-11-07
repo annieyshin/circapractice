@@ -1,36 +1,37 @@
-import React from 'react';
-import { Menu, Select } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Select, Menu } from 'semantic-ui-react';
 
-const TeamMemberSelect = ({ mockTeamMembers }) => {
-  const getOptions = mockTeamMembers => {
+const TeamMemberSelect = ({ teamMembers }) => {
+  const getOptions = teamMembers => {
     let options = [];
-
-    mockTeamMembers.forEach(teamMember => {
-      let newTeamMember = {
+    teamMembers.forEach(teamMember => {
+      let option = {
         key: teamMember.id,
-        value: teamMember.id,
+        value: teamMember.name,
         text: teamMember.name
       };
-      options.push(newTeamMember);
+      options.push(option);
     });
-
     return options;
   };
 
-  const options = getOptions(mockTeamMembers);
+  const options = getOptions(teamMembers);
 
-  const handleChange = (e, selection) => {
-    //selection.value is the ID of the selected item
-    console.log(selection.value);
+  const [selection, setSelection] = useState(null);
+
+  const handleChange = (e, {value}) => {
+    setSelection(value);
   };
+
+  console.log(`Current selection is: ${selection}`);
 
   return (
     <Menu.Item>
       <Select
         onChange={handleChange}
-        selection
         options={options}
-        placeholder="Select Team Member"
+        placeholder="Team Member"
+        value={selection}
       />
     </Menu.Item>
   );
