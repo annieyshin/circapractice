@@ -1,11 +1,12 @@
 import React from 'react';
 import { Header, Icon } from 'semantic-ui-react';
-import ReportsNav from './ReportsNav';
 import {
   mockTeamMembers,
   mockClients,
   mockProjects
 } from '../../Data/mockData';
+import ReportsNav from './ReportsNav';
+import ReportsTable from './ReportsTable';
 
 const ReportsMain = () => {
   return (
@@ -22,6 +23,7 @@ const ReportsMain = () => {
         clients={mockClients}
         projects={mockProjects}
       />
+      <ReportsTable teamMembers={mockTeamMembers}/>
     </div>
   );
 };
