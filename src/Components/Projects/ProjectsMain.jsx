@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Icon } from 'semantic-ui-react';
 import ProjectsList from './ProjectsList';
 
-const ProjectsMain = () => {
+const ProjectsMain = ({data}) => {
   return (
     <div>
       <Header size="huge">
@@ -12,7 +12,7 @@ const ProjectsMain = () => {
           Browse projects and change their billing type.
         </Header.Subheader>
       </Header>
-      <ProjectsList />
+      <ProjectsList data={data}/>
     </div>
   );
 };
