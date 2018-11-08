@@ -6,6 +6,7 @@ import NavBar from './Components/NavBar';
 import ReportsMain from './Components//Reports/ReportsMain';
 import ExpensesMain from './Components/Expenses/ExpensesMain';
 import ProjectsMain from './Components/Projects/ProjectsMain';
+import TeamMembersMain from './Components/TeamMembers/TeamMembersMain';
 import { useData } from './Components/Common/ApiHooks';
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                   path="/projects"
                   render={() => <ProjectsMain data={data} />}
                 />
+                <Route path="/team-members" component={TeamMembersMain} />
               </Switch>
             </Container>
           </div>
