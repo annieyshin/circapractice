@@ -8,7 +8,7 @@ const ProjectListItem = ({ project }) => {
     <Table.Row>
       <Table.Cell>{name}</Table.Cell>
       <Table.Cell textAlign='center'>{billable ? 'Yes' : 'No'}</Table.Cell>
-      <Table.Cell>{`Angel's Envy ${cid}`}</Table.Cell>
+      <Table.Cell>{cid ? `${cid}` : "None ya"}</Table.Cell>
       <Table.Cell><BillingTypeSelect budgetType={budgetType} /></Table.Cell>
     </Table.Row>
   );
