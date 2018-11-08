@@ -23,7 +23,7 @@ const TeamMemberSelect = ({ teamMembers }) => {
     setSelection(value);
   };
 
-  console.log(`Current selection is: ${selection}`);
+  // console.log(`Current selection is: ${selection}`);
 
   return (
     <Menu.Item>
