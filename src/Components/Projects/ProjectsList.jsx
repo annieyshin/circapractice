@@ -1,10 +1,11 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 import ProjectListItem from './ProjectListItem';
-import { useProjects } from '../Common/ApiHooks';
+import { useData } from '../Common/ApiHooks';
 
 const ProjectsList = () => {
-  const projects = useProjects();
+  const projects = useData().projects;
+  const clients = useData().clients;
 
   return (
     <Table columns={4} color="teal">
@@ -17,9 +18,9 @@ const ProjectsList = () => {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {projects &&
+        {projects && clients &&
           projects.map(project => (
-            <ProjectListItem key={project.id} project={project} />
+            <ProjectListItem key={project.id} project={project} clients={clients} />
           ))}
       </Table.Body>
     </Table>
