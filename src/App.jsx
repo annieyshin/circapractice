@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./Components/HomePage";
@@ -7,9 +7,10 @@ import ReportsMain from "./Components//Reports/ReportsMain";
 import ExpensesMain from './Components/Expenses/ExpensesMain'
 import ProjectsMain from "./Components/Projects/ProjectsMain";
 import ApiTest from "./Components/TestArea/ApiTest";
+import { useData } from './Components/Common/ApiHooks';
 
-class App extends Component {
-  render() {
+const App = () => {
+    const data = useData();
     return (
       <div>
         <Switch>
@@ -25,7 +26,7 @@ class App extends Component {
                 <Switch>
                   <Route path="/reports" component={ReportsMain} />
                   <Route path="/expenses" component={ExpensesMain} />
-                  <Route path="/projects" component={ProjectsMain} />
+                  <Route path="/projects" render={()=><ProjectsMain data={data}/>} />
                   <Route path="/test" component={ApiTest} />
                 </Switch>
               </Container>
@@ -34,7 +35,6 @@ class App extends Component {
         />
       </div>
     );
-  }
 }
 
 export default App;
