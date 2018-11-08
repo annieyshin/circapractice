@@ -1,15 +1,14 @@
 import React  from 'react';
 import { Header } from 'semantic-ui-react';
-import { useWorkspace } from './ApiHooks'
+import { useProjects } from '../Common/ApiHooks'
 
 const ApiTest = () => {
-  const workspace = useWorkspace();
+  const projects = useProjects();
 
   return (
     <div>
       <h1>Our call returned:</h1>
-      <Header>{workspace.name}</Header>
-      <Header>ID: {workspace.id}</Header>
+      <Header>Some Project Name: {projects && projects[0].name}</Header>
     </div>
   );
 };
