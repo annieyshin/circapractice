@@ -4,16 +4,15 @@ import TeamMemberSelect from './TeamMemberSelect';
 import ClientSelect from './ClientSelect';
 import ProjectsSelect from './ProjectsSelect';
 
+const ReportsNav = ({ data }) => {
+  const { clients, projects, users } = data;
 
-const ReportsNav = ({teamMembers, clients, projects}) => {
   return (
     <Menu borderless>
-      <TeamMemberSelect teamMembers={teamMembers} />
-      <ClientSelect clients={clients} />
-      <ProjectsSelect projects={projects} />
+      {users && <TeamMemberSelect teamMembers={users} />}
+      {clients && <ClientSelect clients={clients} />}
+      {projects && <ProjectsSelect projects={projects} />}
     </Menu>
-
-
   );
 };
 
