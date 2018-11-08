@@ -14,6 +14,9 @@ const HomePage = ({ history }) => {
       <Button size="massive" primary onClick={() => history.push('/projects')}>
         Go to projects!
       </Button>
+      <Button size="massive" primary onClick={() => history.push('/team-members')}>
+        Go to team members!
+      </Button>
     </div>
   );
 };
