@@ -1,9 +1,9 @@
 import React  from 'react';
 import { Header } from 'semantic-ui-react';
-import { useProjects } from '../Common/ApiHooks'
+import { useData } from '../Common/ApiHooks'
 
 const ApiTest = () => {
-  const projects = useProjects();
+  const projects = useData().projects;
 
   return (
     <div>
