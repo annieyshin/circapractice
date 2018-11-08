@@ -6,7 +6,7 @@ import NavBar from "./Components/NavBar";
 import ReportsMain from "./Components//Reports/ReportsMain";
 import ExpensesMain from './Components/Expenses/ExpensesMain'
 import ProjectsMain from "./Components/Projects/ProjectsMain";
-import ApiTest from "./Components/Test/ApiTest";
+import ApiTest from "./Components/TestArea/ApiTest";
 
 class App extends Component {
   render() {
