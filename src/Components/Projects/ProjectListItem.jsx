@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table, Icon } from 'semantic-ui-react';
 import BillingTypeSelect from './BillingTypeSelect';
 
 const ProjectListItem = ({ project, clients }) => {
@@ -15,7 +15,13 @@ const ProjectListItem = ({ project, clients }) => {
   return (
     <Table.Row>
       <Table.Cell>{name}</Table.Cell>
-      <Table.Cell textAlign="center">{billable ? 'Yes' : 'No'}</Table.Cell>
+      <Table.Cell textAlign="center">
+        {billable ? (
+          <Icon color="green" name="checkmark" size="large" />
+        ) : (
+          <Icon color="red" name="x" size="large" />
+        )}
+      </Table.Cell>
       <Table.Cell>{clientName ? clientName : 'None ya'}</Table.Cell>
       <Table.Cell>
         <BillingTypeSelect budgetType={budgetType} />
