@@ -2,11 +2,25 @@ import React, { useState } from 'react';
 import { Button, Header, Icon } from 'semantic-ui-react';
 import ExpensesList from './ExpensesList';
 import ExpensesForm from './ExpensesForm';
+import { mockExpenses } from '../../Data/mockData';
 
 const ExpensesMain = () => {
   const [showForm, setShowForm] = useState(false);
+  const [expenses, setExpenses] = useState(mockExpenses);
 
-  const handleCancel = () => {
+  const handleCreate = newExpense => {
+    const newExpenses = expenses;
+    newExpenses.push(newExpense)
+    setExpenses(newExpenses);
+    handleCloseForm();
+  };
+
+  const handleDelete = expenseId => {
+    const newExpenses = expenses.filter(e => e.id !== expenseId);
+    setExpenses(newExpenses);
+  };
+
+  const handleCloseForm = () => {
     setShowForm(false);
   };
 
@@ -19,7 +33,7 @@ const ExpensesMain = () => {
           View, add, edit, or delete monthly expenses here.
         </Header.Subheader>
       </Header>
-      <ExpensesList />
+      <ExpensesList handleDelete={handleDelete} expenses={expenses} />
       <Button
         onClick={() => setShowForm(true)}
         content="Add Expense"
@@ -27,7 +41,9 @@ const ExpensesMain = () => {
         primary
         style={{ marginBottom: '2em' }}
       />
-      {showForm && <ExpensesForm handleCancel={handleCancel} />}
+      {showForm && (
+        <ExpensesForm handleCancel={handleCloseForm} handleCreate={handleCreate} />
+      )}
     </div>
   );
 };

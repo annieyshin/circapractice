@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExpensesListItem from './ExpensesListItem';
 import { Table } from 'semantic-ui-react';
-import { mockExpenses } from '../../Data/mockData';
 
-const ExpensesList = () => {
-  const [expenses, setExpenses] = useState(mockExpenses);
-
-  const handleDelete = expenseId => {
-    const newExpenses = expenses.filter(e => e.id !== expenseId);
-    setExpenses(newExpenses);
+const ExpensesList = ({ expenses, handleDelete }) => {
+  const getTotal = () => {
+    let total = 0;
+    expenses.forEach(expense => {
+      total += parseInt(expense.cost);
+    });
+    return total;
   };
 
   return (
-    <Table columns={3} color='red'>
+    <Table columns={3} color="red">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Title</Table.HeaderCell>
@@ -35,7 +35,7 @@ const ExpensesList = () => {
       <Table.Footer>
         <Table.Row>
           <Table.HeaderCell />
-          <Table.HeaderCell>Total: $500</Table.HeaderCell>
+          <Table.HeaderCell>Total: ${getTotal()}</Table.HeaderCell>
           <Table.HeaderCell />
         </Table.Row>
       </Table.Footer>

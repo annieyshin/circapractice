@@ -8,6 +8,9 @@ const HomePage = ({ history }) => {
       <Button size="massive" primary onClick={() => history.push('/reports')}>
         Go to reports!
       </Button>
+      <Button size="massive" primary onClick={() => history.push('/test')}>
+        Go to test area!
+      </Button>
     </div>
   );
 };

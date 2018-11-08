@@ -13,7 +13,7 @@ const options = [
   { key: 'fixed', value: 'Fixed', text: 'Fixed' }
 ];
 
-const BudgetTypeSelection = ({ budgetType }) => {
+const BillingTypeSelect = ({ budgetType }) => {
   const [state, setState] = useState(budgetType);
 
   const handleChange = (e, selection) => {
@@ -33,4 +33,4 @@ const BudgetTypeSelection = ({ budgetType }) => {
   );
 };
 
-export default BudgetTypeSelection;
+export default BillingTypeSelect;
