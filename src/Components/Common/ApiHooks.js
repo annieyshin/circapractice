@@ -14,6 +14,11 @@ export const useData = () => {
 
   const [clients, setClients] = useState(null);
 
+  const getUsersUrl = workspaceId =>
+    `https://www.toggl.com/api/v8/workspaces/${workspaceId}/users`;
+
+  const [users, setUsers] = useState(null);
+
   useEffect(() => {
     fetch(workspaceUrl, init)
       .then(response => response.json())
@@ -27,13 +32,19 @@ export const useData = () => {
               .then(response => response.json())
               .then(data => {
                 setClients(data);
+                return fetch(getUsersUrl(workspaceId), init)
+                  .then(response=>response.json())
+                  .then(data => {
+                    setUsers(data);
+                  });
               });
           });
       });
   }, []);
   return {
     projects: projects,
-    clients: clients
+    clients: clients,
+    users: users
   };
 };
 
