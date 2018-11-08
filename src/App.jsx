@@ -33,7 +33,7 @@ const App = () => {
                   path="/projects"
                   render={() => <ProjectsMain data={data} />}
                 />
-                <Route path="/team-members" component={TeamMembersMain} />
+                <Route path="/team-members" render={() => <TeamMembersMain data={data} />} />
               </Switch>
             </Container>
           </div>
