@@ -23,7 +23,10 @@ const App = () => {
             <NavBar />
             <Container className="main">
               <Switch>
-                <Route path="/reports" component={ReportsMain} />
+                <Route
+                  path="/reports"
+                  render={() => <ReportsMain data={data} />}
+                />
                 <Route path="/expenses" component={ExpensesMain} />
                 <Route
                   path="/projects"
