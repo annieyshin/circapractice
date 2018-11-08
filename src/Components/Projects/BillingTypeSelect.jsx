@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Form } from 'semantic-ui-react';
 
-const formStyle = {
-  minWidth: '0',
-  maxWidth: '75%'
-};
-
 const options = [
   { key: 'hourly', value: 'Hourly', text: 'Hourly' },
   { key: 'monthly', value: 'Monthly', text: 'Monthly' },
@@ -14,7 +9,7 @@ const options = [
 ];
 
 const BillingTypeSelect = ({ budgetType }) => {
-  const [state, setState] = useState(budgetType);
+  const [state, setState] = useState('Hourly');
 
   const handleChange = (e, selection) => {
     setState(selection.value);
@@ -27,7 +22,6 @@ const BillingTypeSelect = ({ budgetType }) => {
         options={options}
         selection
         value={state}
-        style={formStyle}
       />
     </Form>
   );
