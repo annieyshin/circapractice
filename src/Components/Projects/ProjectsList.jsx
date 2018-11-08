@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Table } from 'semantic-ui-react';
 import ProjectListItem from './ProjectListItem';
-import { mockProjects } from '../../Data/mockData';
+import { useProjects } from '../Common/ApiHooks';
 
 const ProjectsList = () => {
-  const [projects] = useState(mockProjects);
+  const projects = useProjects();
 
   return (
-    <Table columns={4} color='teal'>
+    <Table columns={4} color="teal">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Name</Table.HeaderCell>
-          <Table.HeaderCell>Billable</Table.HeaderCell>
+          <Table.HeaderCell textAlign="center">Billable</Table.HeaderCell>
           <Table.HeaderCell>Client</Table.HeaderCell>
           <Table.HeaderCell>Billing Cycle</Table.HeaderCell>
         </Table.Row>
