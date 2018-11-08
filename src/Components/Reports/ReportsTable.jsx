@@ -20,7 +20,7 @@ const ReportsTable = ({teamMembers}) => {
             <ReportsTableItem
               key={teamMember.id}
               id={teamMember.id}
-              name={teamMember.name}
+              name={teamMember.fullname}
             />
           ))}
       </Table.Body>
