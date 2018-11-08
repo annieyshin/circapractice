@@ -1,11 +1,10 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 import ProjectListItem from './ProjectListItem';
-import { useData } from '../Common/ApiHooks';
 
-const ProjectsList = () => {
-  const projects = useData().projects;
-  const clients = useData().clients;
+const ProjectsList = ({data}) => {
+  const projects = data.projects;
+  const clients = data.clients;
 
   return (
     <Table columns={4} color="teal">
