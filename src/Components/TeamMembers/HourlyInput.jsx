@@ -4,19 +4,26 @@ import { Form, Button } from 'semantic-ui-react';
 const HourlyInput = () => {
   const [hourlyRate, setHourlyRate] = useState();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    let submittedRate = e.target.rate.value;
-    setHourlyRate(submittedRate);
+  const handleSubmit = () => {
+    console.log(`Submitting ${hourlyRate}`);
+  };
+
+  const handleChange = e => {
+    setHourlyRate(e.target.value);
   };
 
   console.log(hourlyRate);
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group inline>
-        <Form.Input placeholder="Rate" name="rate" type="number" />
-        <Button type="submit">Save</Button>
+      <Form.Group inline style={{ marginBottom: '0' }}>
+        <Form.Input
+          placeholder="Rate"
+          name="rate"
+          type="number"
+          onChange={handleChange}
+        />
+        <Button type="submit" color="teal" icon="save" content="Save" />
       </Form.Group>
     </Form>
   );
