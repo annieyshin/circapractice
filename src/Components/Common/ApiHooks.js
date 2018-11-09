@@ -33,7 +33,7 @@ export const useData = () => {
               .then(data => {
                 setClients(data);
                 return fetch(getUsersUrl(workspaceId), init)
-                  .then(response=>response.json())
+                  .then(response => response.json())
                   .then(data => {
                     setUsers(data);
                   });
