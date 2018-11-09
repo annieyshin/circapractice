@@ -7,7 +7,7 @@ import ReportsMain from './Components//Reports/ReportsMain';
 import ExpensesMain from './Components/Expenses/ExpensesMain';
 import ProjectsMain from './Components/Projects/ProjectsMain';
 import TeamMembersMain from './Components/TeamMembers/TeamMembersMain';
-import { useData } from './Components/Common/ApiHooks';
+import { useData } from './Data/ApiHooks';
 
 const App = () => {
   const data = useData();
