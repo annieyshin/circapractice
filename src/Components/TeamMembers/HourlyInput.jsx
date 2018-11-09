@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 const HourlyInput = () => {
   const [hourlyRate, setHourlyRate] = useState();
@@ -8,22 +8,15 @@ const HourlyInput = () => {
     setHourlyRate(e.target.value);
   };
 
-  const handleClick = e => {
-    console.log(hourlyRate);
-  };
-
   return (
-    <Input
-      action={{
-        color: 'teal',
-        labelPosition: 'right',
-        icon: 'save',
-        content: 'Submit',
-        onClick: handleClick
-      }}
-      value={hourlyRate}
-      onChange={handleChange}
-    />
+    <Form>
+      <Form.Input
+        name="rate"
+        type="number"
+        value={hourlyRate}
+        onChange={handleChange}
+      />
+    </Form>
   );
 };
 
