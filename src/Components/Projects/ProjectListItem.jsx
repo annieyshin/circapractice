@@ -3,8 +3,8 @@ import { Table, Icon } from 'semantic-ui-react';
 import BillingTypeSelect from './BillingTypeSelect';
 
 const ProjectListItem = ({ project, clients }) => {
-  const { name, billable, budgetType, cid } = project;
-  let clientName = 'None';
+  const { name, billable, cid } = project;
+  let clientName = 'None Assigned';
 
   clients.forEach(client => {
     if (client.id === cid) {
@@ -22,9 +22,9 @@ const ProjectListItem = ({ project, clients }) => {
           <Icon color="red" name="x" size="large" />
         )}
       </Table.Cell>
-      <Table.Cell>{clientName ? clientName : 'None ya'}</Table.Cell>
+      <Table.Cell>{clientName}</Table.Cell>
       <Table.Cell>
-        <BillingTypeSelect budgetType={budgetType} />
+        <BillingTypeSelect />
       </Table.Cell>
     </Table.Row>
   );
