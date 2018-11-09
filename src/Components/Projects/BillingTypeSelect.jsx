@@ -11,8 +11,10 @@ const options = [
 const BillingTypeSelect = () => {
   const [billingType, setBillingType] = useState('Hourly');
 
-  const handleChange = selection => {
-    setBillingType(selection.value);
+  const handleChange = (e, {value}) => {
+    console.log(value);
+    
+    setBillingType(value);
   };
 
   const handleSubmit = () => {
