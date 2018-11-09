@@ -8,6 +8,7 @@ import ExpensesMain from './Components/Expenses/ExpensesMain';
 import ProjectsMain from './Components/Projects/ProjectsMain';
 import TeamMembersMain from './Components/TeamMembers/TeamMembersMain';
 import { useData } from './Data/ApiHooks';
+import FireBaseTest from './Firebase/FireBaseTest';
 
 const App = () => {
   const data = useData();
@@ -29,6 +30,7 @@ const App = () => {
                   render={() => <ReportsMain data={data} />}
                 />
                 <Route path="/expenses" component={ExpensesMain} />
+                <Route path="/test" component={FireBaseTest} />
                 <Route
                   path="/projects"
                   render={() => <ProjectsMain data={data} />}
