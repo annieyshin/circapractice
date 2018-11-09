@@ -15,6 +15,7 @@ code {
 
 .main {
   margin-top: 12em;
+  margin-bottom: 12em;
   box-shadow: rgb(170, 170, 170) 0px 8px 32px;
   padding: 40px;
 }

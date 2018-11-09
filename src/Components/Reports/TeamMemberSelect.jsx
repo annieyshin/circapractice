@@ -7,8 +7,8 @@ const TeamMemberSelect = ({ teamMembers }) => {
     teamMembers.forEach(teamMember => {
       let option = {
         key: teamMember.id,
-        value: teamMember.name,
-        text: teamMember.name
+        value: teamMember.fullname,
+        text: teamMember.fullname
       };
       options.push(option);
     });
@@ -23,7 +23,7 @@ const TeamMemberSelect = ({ teamMembers }) => {
     setSelection(value);
   };
 
-  console.log(`Current selection is: ${selection}`);
+  // console.log(`Current selection is: ${selection}`);
 
   return (
     <Menu.Item>

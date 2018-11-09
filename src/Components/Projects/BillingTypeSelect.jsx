@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import { Form } from 'semantic-ui-react';
-
-const formStyle = {
-  minWidth: '0',
-  maxWidth: '75%'
-};
+import { Form, Button } from 'semantic-ui-react';
 
 const options = [
   { key: 'hourly', value: 'Hourly', text: 'Hourly' },
@@ -13,22 +8,29 @@ const options = [
   { key: 'fixed', value: 'Fixed', text: 'Fixed' }
 ];
 
-const BillingTypeSelect = ({ budgetType }) => {
-  const [state, setState] = useState(budgetType);
+const BillingTypeSelect = () => {
+  const [billingType, setBillingType] = useState('Hourly');
 
-  const handleChange = (e, selection) => {
-    setState(selection.value);
+  const handleChange = selection => {
+    setBillingType(selection.value);
+  };
+
+  const handleSubmit = () => {
+    console.log('Submitting ' + billingType);
   };
 
   return (
-    <Form>
-      <Form.Select
-        onChange={handleChange}
-        options={options}
-        selection
-        value={state}
-        style={formStyle}
-      />
+    <Form onSubmit={handleSubmit}>
+      <Form.Group inline style={{ marginBottom: '0' }}>
+        <Form.Select
+          onChange={handleChange}
+          options={options}
+          selection
+          value={billingType}
+          style={{ minWidth: '8em' }}
+        />
+        <Button type="submit" color="teal" icon="save" content="Save" />
+      </Form.Group>
     </Form>
   );
 };

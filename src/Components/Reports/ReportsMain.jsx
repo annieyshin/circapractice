@@ -1,14 +1,9 @@
 import React from 'react';
 import { Header, Icon } from 'semantic-ui-react';
-import {
-  mockTeamMembers,
-  mockClients,
-  mockProjects
-} from '../../Data/mockData';
 import ReportsNav from './ReportsNav';
 import ReportsTable from './ReportsTable';
 
-const ReportsMain = () => {
+const ReportsMain = ({ data }) => {
   return (
     <div>
       <Header size="huge">
@@ -18,12 +13,8 @@ const ReportsMain = () => {
           View reports for your team members, clients, and projects.
         </Header.Subheader>
       </Header>
-      <ReportsNav
-        teamMembers={mockTeamMembers}
-        clients={mockClients}
-        projects={mockProjects}
-      />
-      <ReportsTable teamMembers={mockTeamMembers}/>
+      <ReportsNav data={data} />
+      <ReportsTable teamMembers={data.users} />
     </div>
   );
 };
