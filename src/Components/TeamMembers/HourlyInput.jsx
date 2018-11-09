@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 const HourlyInput = () => {
   const [hourlyRate, setHourlyRate] = useState();
 
-  const handleChange = e => {
-    setHourlyRate(e.target.value);
+  const handleSubmit = e => {
+    e.preventDefault();
+    let submittedRate = e.target.rate.value;
+    setHourlyRate(submittedRate);
   };
 
+  console.log(hourlyRate);
+
   return (
-    <Form>
-      <Form.Input
-        name="rate"
-        type="number"
-        value={hourlyRate}
-        onChange={handleChange}
-      />
+    <Form onSubmit={handleSubmit}>
+      <Form.Group inline>
+        <Form.Input placeholder="Rate" name="rate" type="number" />
+        <Button type="submit">Save</Button>
+      </Form.Group>
     </Form>
   );
 };
