@@ -1,7 +1,9 @@
 import React from 'react';
 import { Header, Icon } from 'semantic-ui-react';
+import TeamMembersList from './TeamMembersList';
 
-const ProjectsMain = () => {
+const TeamMembersMain = ({ data }) => {
+  const teamMembers = data.users;
   return (
     <div>
       <Header size="huge">
@@ -11,8 +13,9 @@ const ProjectsMain = () => {
           View all team members and edit their hourly rate.
         </Header.Subheader>
       </Header>
+      <TeamMembersList teamMembers={teamMembers} />
     </div>
   );
 };
 
-export default ProjectsMain;
+export default TeamMembersMain;
