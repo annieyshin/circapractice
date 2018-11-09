@@ -18,7 +18,7 @@ const HourlyInput = () => {
     <Form onSubmit={handleSubmit}>
       <Form.Group inline style={{ marginBottom: '0' }}>
         <Form.Input
-          placeholder="Rate"
+          placeholder="Hourly Pay Rate"
           name="rate"
           type="number"
           onChange={handleChange}
