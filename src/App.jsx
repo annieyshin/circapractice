@@ -9,6 +9,8 @@ import ProjectsMain from './Components/Projects/ProjectsMain';
 import TeamMembersMain from './Components/TeamMembers/TeamMembersMain';
 import { useData } from './Data/ApiHooks';
 import FireBaseTest from './Firebase/FireBaseTest';
+import Pagination from "react-js-pagination";
+require("bootstrap/less/bootstrap.less");
 
 const App = () => {
   const data = useData();
